@@ -41,25 +41,25 @@ class LinkedList {
         else {
             // creates a new node
             var node = new Node(element);
-            var curr, prev;
-            curr = this.head;
+            var current, prev;
+            current = this.head;
             // add the element to the
             // first index
             if (index == 0) {
                 node.next = this.head;
                 this.head = node;
             } else {
-                curr = this.head;
-                var it = 0;
+                current = this.head;
+                var num = 0;
                 // iterate over the list to find
                 // the position to insert
-                while (it < index) {
-                    it++;
-                    prev = curr;
-                    curr = curr.next;
+                while (num < index) {
+                    num++;
+                    prev = current;
+                    current = current.next;
                 }
                 // adding an element
-                node.next = curr;
+                node.next = current;
                 prev.next = node;
             }
             this.size++;
@@ -71,26 +71,26 @@ class LinkedList {
         if (index < 0 || index >= this.size)
             return console.log("Please Enter a valid index");
         else {
-            var curr, prev, it = 0;
-            curr = this.head;
-            prev = curr;
+            var current, prev, num = 0;
+            current = this.head;
+            prev = current;
             // deleting first element
             if (index === 0) {
-                this.head = curr.next;
+                this.head = current.next;
             } else {
                 // iterate over the list to the
                 // position to removce an element
-                while (it < index) {
-                    it++;
-                    prev = curr;
-                    curr = curr.next;
+                while (num < index) {
+                    num++;
+                    prev = current;
+                    current = current.next;
                 }
                 // remove the element
-                prev.next = curr.next;
+                prev.next = current.next;
             }
             this.size--;
             // return the remove element
-            return curr.element;
+            return current.element;
         }
     }
 }
